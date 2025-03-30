@@ -86,36 +86,85 @@
 // , main menu (taking the user back to the first screen) or quit (closing the game)
 //------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------
-fun main(){
-
+// where all the functions are used
+fun main() {
+    val action = menu()
+    when (action) {
+        'a' -> startGame()
+        's' -> tutorial()
+        'd' -> endGame()
+    }
 }
+    //Game Starting Menu Comes up when you start the game
+    fun menu() : Char {
+        println("NATO Scissors Rock! ")
+        println("====================")
+        println("Welcome To The Game!")
+        println("====================")
+        println("[A] PLAY")
+        println("====================")
+        println("[S] HOW TO PLAY")
+        println("====================")
+        println("[D] QUIT")
+        //The options the user can input
+        val validChoices = "asd"
 
-fun main_menu() {
-    println("NATO Scissors Rock! ")
-    println("====================")
-    println("Welcome To The Game!")
-    println("====================")
-    println("[A] PLAY")
-    println("====================")
-    println("[S] HOW TO PLAY")
-    println("====================")
-    println("[D] QUIT")
-    val ValidChoices = asd
+        while (true) {
+            print("Choice: ")
 
-    while (True) {
-        print("Choice: ")
+            val input = readln()
+            //typed nothing try again
+            if(input.isBlank()) continue
+            //grab first letter
+            val choice = input.lowercase().first()
+            //check choice is a valid option
+            if (validChoices.contains(choice)) return choice
 
-        val input = readln()
-        //typed nothing try again
-        if(input.isBlank()) continue
-        //grab first letter
-        val choice = input.lowercase().first()
-        //check choice is a valid option
-        if (ValidChoices.contains(choice)) return choice
+        }
+    }
+// The Function that starts the game
+    fun startGame() {}
+
+// The Function That tells you how to play the game
+    fun tutorial() {}
+        //Give The Player the option to pick a Game Mechanic they want to learn about
+
+        // Troops, Rounds and Lanes
+
+        //Give an option to go back to the selection of mechanics as well as one to go back to the main menu
+
+// The Function that ends the game
+    fun endGame() : Char {
+        //Thank the player for playing and ask if they are sure they want to quit
+        println("=====================================")
+        println("Are you sure you want to quit the game?")
+        println("=====================================")
+        println("[Y] YES")
+        println("[N] No")
+        val validChoices = "yn"
+        while (true) {
+            print("Choice: ")
+
+            val input = readln()
+            //typed nothing try again
+            if(input.isBlank()) continue
+            //grab first letter
+            val lastChoice = input.lowercase().first()
+            //check choice is a valid option
+            if (validChoices.contains(lastChoice)) return lastChoice
+        val finalChoice = lastChoice
+        when (finalChoice) {
+            'y' -> break
+            'n' -> main()
+            }
 
         }
 
+        //if they choose to quit finish break the loop
+
+        //if they do not return them to the main menu
+    return final
     }
 
-}
+
 
