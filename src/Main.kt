@@ -88,11 +88,12 @@
 //------------------------------------------------------------------------------------------------------------------------
 // where all the functions are used
 fun main() {
-    val action = menu()
+    var action = menu()
     when (action) {
         'a' -> startGame()
         's' -> tutorial()
         'd' -> endGame()
+
     }
 }
     //Game Starting Menu Comes up when you start the game
@@ -126,44 +127,71 @@ fun main() {
     fun startGame() {}
 
 // The Function That tells you how to play the game
-    fun tutorial() {}
-        //Give The Player the option to pick a Game Mechanic they want to learn about
+    fun tutorial() {
+        println("Welcome To NATO Scissors Rock!")
+        println("This game is a 2 player 5 round")
+        println("Rock paper scissors like game")
+        println("but you have 3 lanes and")
+        println("5 possible units to play")
+        println("These units are...")
+        println("====================")
+        println("PRESS ENTER TO CONTINUE")
+        println("====================")
+        var Continue = readln()
+        println("Riflemen:")
+        println("Riflemen when played in the same lane will as scouts will win")
+        println("==========")
+        println("   ||||   ")
+        println("   ||||   ")
+        println("==========")
+        println("Scouts:")
+        println("Scouts when played in the same lane as Artillery will win")
+        println("==========")
+        println("   ////   ")
+        println("   ////   ")
+        println("==========")
+        println("Artillery:")
+        println("Riflemen when played in the same lane as Riflemen will win")
+        println("==========")
+        println("   ||||    ")
+        println("   ////   ")
+        println("==========")
+        println("there are also two special units...")
+        println("====================")
+        println("PRESS ENTER TO CONTINUE")
+        println("====================")
+        var Continue2 = readln()
+        println("Fortress:")
+        println("Fortress when played in the same lane as Riflemen or Scouts will win but only appears in a players last stand round")
+        println("==========")
+        println("   |==|   ")
+        println("   ||||   ")
+        println("==========")
+        println("Special Forces:")
+        println("Special Forces when played in the same lane as Any unit will win but each side only gets one per game")
+        println("==========")
+        println("   SPEC   ")
+        println("   ////   ")
+        println("==========")
+        println("====================")
+        println("PRESS ENTER TO CONTINUE")
+        println("====================")
+        println("Lanes:")
+        println("Each player will take turns putting 1 unit in each of the 3 lanes")
+        println("       ==========     ==========      ==========")
+        println("       |       1|     |       2|      |       3|")
+        println("       |1       |     |2       |      |3       |")
+        println("       ==========     ==========      ==========")
 
-        // Troops, Rounds and Lanes
-
-        //Give an option to go back to the selection of mechanics as well as one to go back to the main menu
+    }
 
 // The Function that ends the game
     fun endGame() : Char {
-        //Thank the player for playing and ask if they are sure they want to quit
+        //Thank the player for playing
         println("=====================================")
-        println("Are you sure you want to quit the game?")
+        println("          Thanks for playing      ")
         println("=====================================")
-        println("[Y] YES")
-        println("[N] No")
-        val validChoices = "yn"
-        while (true) {
-            print("Choice: ")
-
-            val input = readln()
-            //typed nothing try again
-            if(input.isBlank()) continue
-            //grab first letter
-            val lastChoice = input.lowercase().first()
-            //check choice is a valid option
-            if (validChoices.contains(lastChoice)) return lastChoice
-        val finalChoice = lastChoice
-        when (finalChoice) {
-            'y' -> break
-            'n' -> main()
-            }
-
-        }
-
-        //if they choose to quit finish break the loop
-
-        //if they do not return them to the main menu
-    return final
+    return 'A'
     }
 
 
