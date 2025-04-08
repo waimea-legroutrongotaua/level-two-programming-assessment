@@ -88,7 +88,7 @@
 //------------------------------------------------------------------------------------------------------------------------
 // where all the functions are used
 fun main() {
-    var action = menu()
+    val action = menu()
     when (action) {
         'a' -> startGame()
         's' -> tutorial()
@@ -123,9 +123,39 @@ fun main() {
 
         }
     }
+-//    a == "" && b == "" ->
+//fun(choice: ) : Boolean {}
+//    return when {
+//
+//    }
 // The Function that starts the game
-    fun startGame() {}
+fun startGame() {
+    val player1units = mutableListOf<String>()
+    val player2units = mutableListOf<String>()
+    val player1lane1 = mutableListOf<String>()
+    val player1lane2 = mutableListOf<String>()
+    val player1lane3 = mutableListOf<String>()
+    val player2lane1 = mutableListOf<String>()
+    val player2lane2 = mutableListOf<String>()
+    val player2lane3 = mutableListOf<String>()
+    var firstround = true
+    player1units.add("Riflemen")
+    player2units.add("Riflemen")
+    player1units.add("Scouts")
+    player2units.add("Scouts")
+    player1units.add("Artillery")
+    player2units.add("Artillery")
+    player1units.add("Special Forces")
+    player2units.add("Special Forces")
+    if (player1lane1.isEmpty()) {
+        println("Hello Player 1!")
+        println("What is your name?")
+        println("Name:")
+        var player1name = readln()
+        println(player1name)
+    }
 
+}
 // The Function That tells you how to play the game
     fun tutorial() {
         println("Welcome To NATO Scissors Rock!")
@@ -136,7 +166,8 @@ fun main() {
         println("These units are...")
         println("====================")
         println("PRESS ENTER TO CONTINUE")
-        println("====================")
+
+    intln("====================")
         var Continue = readln()
         println("Riflemen:")
         println("Riflemen when played in the same lane will as scouts will win")
