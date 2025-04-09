@@ -123,7 +123,7 @@ fun main() {
 
         }
     }
--//    a == "" && b == "" ->
+//    a == "" && b == "" ->
 //fun(choice: ) : Boolean {}
 //    return when {
 //
@@ -167,7 +167,7 @@ fun startGame() {
         println("====================")
         println("PRESS ENTER TO CONTINUE")
 
-    intln("====================")
+    println("====================")
         var Continue = readln()
         println("Riflemen:")
         println("Riflemen when played in the same lane will as scouts will win")
