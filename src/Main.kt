@@ -87,6 +87,14 @@
 //------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------
 // where all the functions are used
+val player1units = mutableListOf<String>()
+val player2units = mutableListOf<String>()
+val player1lane1 = mutableListOf<String>()
+val player1lane2 = mutableListOf<String>()
+val player1lane3 = mutableListOf<String>()
+val player2lane1 = mutableListOf<String>()
+val player2lane2 = mutableListOf<String>()
+val player2lane3 = mutableListOf<String>()
 fun main() {
     val action = menu()
     when (action) {
@@ -130,14 +138,7 @@ fun main() {
 //    }
 // The Function that starts the game
 fun startGame() {
-    val player1units = mutableListOf<String>()
-    val player2units = mutableListOf<String>()
-    val player1lane1 = mutableListOf<String>()
-    val player1lane2 = mutableListOf<String>()
-    val player1lane3 = mutableListOf<String>()
-    val player2lane1 = mutableListOf<String>()
-    val player2lane2 = mutableListOf<String>()
-    val player2lane3 = mutableListOf<String>()
+    var player1name = null
     var firstround = true
     player1units.add("Riflemen")
     player2units.add("Riflemen")
@@ -147,15 +148,102 @@ fun startGame() {
     player2units.add("Artillery")
     player1units.add("Special Forces")
     player2units.add("Special Forces")
-    if (player1lane1.isEmpty()) {
+    if (player1name.isNullOrBlank()) {
         println("Hello Player 1!")
         println("What is your name?")
         println("Name:")
         var player1name = readln()
         println(player1name)
     }
-    
-
+    options()
+    while (true) {
+        print("Choice for lane 1: ")
+        val input  = readln()
+        if(input.isBlank()) continue
+            val number = input.toIntOrNull() ?: continue
+            if (number > player1units.size) {
+                continue
+            }
+        if (number == 0) {
+            continue
+        }
+            if (number <= 0) {
+                continue
+        }
+        if (number == 1) {
+            player1lane1.add(player1units[0])
+            player1units.removeAt(0)
+            println(player1lane1)
+        }
+        if (number == 2) {
+            player1lane1.add(player1units[1])
+            player1units.removeAt(1)
+            println(player1lane1)
+        }
+        if (number == 3) {
+            player1lane1.add(player1units[2])
+            player1units.removeAt(2)
+            println(player1lane1)
+        }
+        if (number == 4) {
+            player1lane1.add(player1units[3])
+            player1units.removeAt(3)
+            println(player1lane1)
+        }
+        if (number == 5) {
+            player1lane1.add(player1units[4])
+            player1units.removeAt(4)
+            println(player1lane1)
+            }
+    break
+    }
+    options()
+    while (true) {
+        print("Choice for lane 2: ")
+        val input  = readln()
+        if(input.isBlank()) continue
+        val number = input.toIntOrNull() ?: continue
+        if (number > player1units.size) {
+            continue
+        }
+        if (number == 0) {
+            continue
+        }
+        if (number <= 0) {
+            continue
+        }
+        if (number == 1) {
+            player1lane2.add(player1units[0])
+            player1units.removeAt(0)
+            println(player1lane1)
+            println(player1lane2)
+        }
+        if (number == 2) {
+            player1lane2.add(player1units[1])
+            player1units.removeAt(1)
+            println(player1lane1)
+            println(player1lane2)
+        }
+        if (number == 3) {
+            player1lane2.add(player1units[2])
+            player1units.removeAt(2)
+            println(player1lane1)
+            println(player1lane2)
+        }
+        if (number == 4) {
+            player1lane2.add(player1units[3])
+            player1units.removeAt(3)
+            println(player1lane1)
+            println(player1lane2)
+        }
+        if (number == 5) {
+            player1lane2.add(player1units[4])
+            player1units.removeAt(4)
+            println(player1lane1)
+            println(player1lane2)
+        }
+        break
+    }
 }
 // The Function That tells you how to play the game
     fun tutorial() {
@@ -167,8 +255,7 @@ fun startGame() {
         println("These units are...")
         println("====================")
         println("PRESS ENTER TO CONTINUE")
-
-    println("====================")
+        println("====================")
         var Continue = readln()
         println("Riflemen:")
         println("Riflemen when played in the same lane will as scouts will win")
@@ -218,13 +305,71 @@ fun startGame() {
     }
 
 // The Function that ends the game
-    fun endGame() : Char {
+    fun endGame() {
         //Thank the player for playing
         println("=====================================")
         println("          Thanks for playing         ")
         println("=====================================")
-    return 'A'
     }
 
+fun player1Turn(checkTurn: Boolean ): Boolean {
+    var checkTurn
+        if (player1lane1.size == 0)
+            checkTurn = true
+        if (player1lane2.size == 0)
+            checkTurn = true
+        if (player1lane3.size == 0)
+            checkTurn = true
+            return checkTurn
+        else {
+            checkTurn = false
+            return checkTurn
+        }
+}
 
+fun options() {
+    if(player1Turn(true))
+        if (player1units.size >= 1) {
+            println("PRESS 1")
+            println(player1units[0])
+        }
+        if (player1units.size >= 2) {
+            println("PRESS 2")
+            println(player1units[1])
+        }
+        if (player1units.size >= 3) {
+            println("PRESS 3")
+            println(player1units[2])
+        }
+        if (player1units.size >= 4) {
+            println("PRESS 4")
+            println(player1units[3])
+        }
+        if (player1units.size >= 5) {
+            println("PRESS 5")
+            println(player1units[4])
+        }
+    if (player1Turn(false)) {
+        if (player2units.size >= 1) {
+            println("PRESS 1")
+            println(player2units[0])
+        }
+        if (player2units.size >= 2) {
+            println("PRESS 2")
+            println(player2units[1])
+        }
+        if (player2units.size >= 3) {
+            println("PRESS 3")
+            println(player2units[2])
+        }
+        if (player2units.size >= 4) {
+            println("PRESS 4")
+            println(player2units[3])
+        }
+        if (player2units.size >= 5) {
+            println("PRESS 5")
+            println(player2units[4])
+        }
+    }
 
+}
