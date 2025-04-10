@@ -154,6 +154,7 @@ fun startGame() {
         var player1name = readln()
         println(player1name)
     }
+    
 
 }
 // The Function That tells you how to play the game
@@ -220,7 +221,7 @@ fun startGame() {
     fun endGame() : Char {
         //Thank the player for playing
         println("=====================================")
-        println("          Thanks for playing      ")
+        println("          Thanks for playing         ")
         println("=====================================")
     return 'A'
     }
