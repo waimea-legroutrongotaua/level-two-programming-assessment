@@ -197,11 +197,11 @@ fun startGame() {
             }
     break
     }
-    options()
+    options1()
     while (true) {
         print("Choice for lane 2: ")
-        val input  = readln()
-        if(input.isBlank()) continue
+        val input = readln()
+        if (input.isBlank()) continue
         val number = input.toIntOrNull() ?: continue
         if (number > player1units.size) {
             continue
@@ -243,6 +243,54 @@ fun startGame() {
             println(player1lane2)
         }
         break
+    }
+        options1()
+        while (true) {
+            print("Choice for lane 2: ")
+            val input  = readln()
+            if(input.isBlank()) continue
+            val number = input.toIntOrNull() ?: continue
+            if (number > player1units.size) {
+                continue
+            }
+            if (number == 0) {
+                continue
+            }
+            if (number <= 0) {
+                continue
+            }
+            if (number == 1) {
+                player1lane2.add(player1units[0])
+                player1units.removeAt(0)
+                println(player1lane1)
+                println(player1lane2)
+            }
+            if (number == 2) {
+                player1lane2.add(player1units[1])
+                player1units.removeAt(1)
+                println(player1lane1)
+                println(player1lane2)
+            }
+            if (number == 3) {
+                player1lane2.add(player1units[2])
+                player1units.removeAt(2)
+                println(player1lane1)
+                println(player1lane2)
+            }
+            if (number == 4) {
+                player1lane2.add(player1units[3])
+                player1units.removeAt(3)
+                println(player1lane1)
+                println(player1lane2)
+            }
+            if (number == 5) {
+                player1lane2.add(player1units[4])
+                player1units.removeAt(4)
+                println(player1lane1)
+                println(player1lane2)
+            }
+            break
+        }
     }
 }
 // The Function That tells you how to play the game
@@ -327,8 +375,7 @@ fun player1Turn(checkTurn: Boolean ): Boolean {
         }
 }
 
-fun options() {
-    if(player1Turn(true))
+fun options1() {
         if (player1units.size >= 1) {
             println("PRESS 1")
             println(player1units[0])
@@ -349,7 +396,8 @@ fun options() {
             println("PRESS 5")
             println(player1units[4])
         }
-    if (player1Turn(false)) {
+}
+fun options2() {
         if (player2units.size >= 1) {
             println("PRESS 1")
             println(player2units[0])
