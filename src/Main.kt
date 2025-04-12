@@ -137,118 +137,68 @@ fun main() {
 //
 //    }
 // The Function that starts the game
-fun startGame() {
-    var player1name = null
+    fun startGame() {
+    var round = 3
+//        var player1name = "EMPTY"
+//        var player2name = "EMPTY"
     var firstround = true
-    player1units.add("Riflemen")
-    player2units.add("Riflemen")
-    player1units.add("Scouts")
-    player2units.add("Scouts")
-    player1units.add("Artillery")
-    player2units.add("Artillery")
-    player1units.add("Special Forces")
-    player2units.add("Special Forces")
-    if (player1name.isNullOrBlank()) {
-        println("Hello Player 1!")
-        println("What is your name?")
-        println("Name:")
-        var player1name = readln()
-        println(player1name)
-    }
-    options()
-    while (true) {
-        print("Choice for lane 1: ")
-        val input  = readln()
-        if(input.isBlank()) continue
+        player1units.add("Riflemen")
+        player2units.add("Riflemen")
+        player1units.add("Scouts")
+        player2units.add("Scouts")
+        player1units.add("Artillery")
+        player2units.add("Artillery")
+        player1units.add("Special Forces")
+        player2units.add("Special Forces")
+
+        var player1name = playersName()
+        options1()
+        while (true) {
+            print("Choice for lane 1: ")
+            val input = readln()
+            if (input.isBlank()) continue
             val number = input.toIntOrNull() ?: continue
             if (number > player1units.size) {
                 continue
             }
-        if (number == 0) {
-            continue
-        }
+            if (number == 0) {
+                continue
+            }
             if (number <= 0) {
                 continue
-        }
-        if (number == 1) {
-            player1lane1.add(player1units[0])
-            player1units.removeAt(0)
-            println(player1lane1)
-        }
-        if (number == 2) {
-            player1lane1.add(player1units[1])
-            player1units.removeAt(1)
-            println(player1lane1)
-        }
-        if (number == 3) {
-            player1lane1.add(player1units[2])
-            player1units.removeAt(2)
-            println(player1lane1)
-        }
-        if (number == 4) {
-            player1lane1.add(player1units[3])
-            player1units.removeAt(3)
-            println(player1lane1)
-        }
-        if (number == 5) {
-            player1lane1.add(player1units[4])
-            player1units.removeAt(4)
-            println(player1lane1)
             }
-    break
-    }
-    options1()
-    while (true) {
-        print("Choice for lane 2: ")
-        val input = readln()
-        if (input.isBlank()) continue
-        val number = input.toIntOrNull() ?: continue
-        if (number > player1units.size) {
-            continue
+            if (number == 1) {
+                player1lane1.add(player1units[0])
+                player1units.removeAt(0)
+                println(player1lane1)
+            }
+            if (number == 2) {
+                player1lane1.add(player1units[1])
+                player1units.removeAt(1)
+                println(player1lane1)
+            }
+            if (number == 3) {
+                player1lane1.add(player1units[2])
+                player1units.removeAt(2)
+                println(player1lane1)
+            }
+            if (number == 4) {
+                player1lane1.add(player1units[3])
+                player1units.removeAt(3)
+                println(player1lane1)
+            }
+            if (number == 5) {
+                player1lane1.add(player1units[4])
+                player1units.removeAt(4)
+                println(player1lane1)
+            }
+            break
         }
-        if (number == 0) {
-            continue
-        }
-        if (number <= 0) {
-            continue
-        }
-        if (number == 1) {
-            player1lane2.add(player1units[0])
-            player1units.removeAt(0)
-            println(player1lane1)
-            println(player1lane2)
-        }
-        if (number == 2) {
-            player1lane2.add(player1units[1])
-            player1units.removeAt(1)
-            println(player1lane1)
-            println(player1lane2)
-        }
-        if (number == 3) {
-            player1lane2.add(player1units[2])
-            player1units.removeAt(2)
-            println(player1lane1)
-            println(player1lane2)
-        }
-        if (number == 4) {
-            player1lane2.add(player1units[3])
-            player1units.removeAt(3)
-            println(player1lane1)
-            println(player1lane2)
-        }
-        if (number == 5) {
-            player1lane2.add(player1units[4])
-            player1units.removeAt(4)
-            println(player1lane1)
-            println(player1lane2)
-        }
-        break
-    }
         options1()
         while (true) {
             print("Choice for lane 2: ")
-            val input  = readln()
-            if(input.isBlank()) continue
+            val input = readln()
+            if (input.isBlank()) continue
             val number = input.toIntOrNull() ?: continue
             if (number > player1units.size) {
                 continue
@@ -291,8 +241,221 @@ fun startGame() {
             }
             break
         }
+        options1()
+        while (true) {
+            print("Choice for lane 3: ")
+            val input = readln()
+            if (input.isBlank()) continue
+            val number = input.toIntOrNull() ?: continue
+            if (number > player1units.size) {
+                continue
+            }
+            if (number == 0) {
+                continue
+            }
+            if (number <= 0) {
+                continue
+            }
+            if (number == 1) {
+                player1lane3.add(player1units[0])
+                player1units.removeAt(0)
+                println(player1lane1)
+                println(player1lane2)
+                println(player1lane3)
+            }
+            if (number == 2) {
+                player1lane3.add(player1units[1])
+                player1units.removeAt(1)
+                println(player1lane1)
+                println(player1lane2)
+                println(player1lane3)
+            }
+            if (number == 3) {
+                player1lane3.add(player1units[2])
+                player1units.removeAt(2)
+                println(player1lane1)
+                println(player1lane2)
+                println(player1lane3)
+            }
+            if (number == 4) {
+                player1lane3.add(player1units[3])
+                player1units.removeAt(3)
+                println(player1lane1)
+                println(player1lane2)
+                println(player1lane3)
+            }
+            if (number == 5) {
+                player1lane3.add(player1units[4])
+                player1units.removeAt(4)
+                println(player1lane1)
+                println(player1lane2)
+                println(player1lane3)
+            }
+            break
+        }
+        var player2name = playersName()
+
+    options2()
+    while (true) {
+        print("Choice for lane 1: ")
+        val input = readln()
+        if (input.isBlank()) continue
+        val number = input.toIntOrNull() ?: continue
+        if (number > player2units.size) {
+            continue
+        }
+        if (number == 0) {
+            continue
+        }
+        if (number <= 0) {
+            continue
+        }
+        if (number == 1) {
+            player2lane1.add(player2units[0])
+            player2units.removeAt(0)
+            println(player2lane1)
+        }
+        if (number == 2) {
+            player2lane1.add(player2units[1])
+            player2units.removeAt(1)
+            println(player2lane1)
+        }
+        if (number == 3) {
+            player2lane1.add(player2units[2])
+            player2units.removeAt(2)
+            println(player2lane1)
+        }
+        if (number == 4) {
+            player2lane1.add(player2units[3])
+            player2units.removeAt(3)
+            println(player2lane1)
+        }
+        if (number == 5) {
+            player2lane1.add(player2units[4])
+            player2units.removeAt(4)
+            println(player2lane1)
+        }
+        break
+    }
+    options2()
+    while (true) {
+        print("Choice for lane 2: ")
+        val input = readln()
+        if (input.isBlank()) continue
+        val number = input.toIntOrNull() ?: continue
+        if (number > player2units.size) {
+            continue
+        }
+        if (number == 0) {
+            continue
+        }
+        if (number <= 0) {
+            continue
+        }
+        if (number == 1) {
+            player2lane2.add(player2units[0])
+            player2units.removeAt(0)
+            println(player2lane1)
+            println(player2lane2)
+        }
+        if (number == 2) {
+            player2lane2.add(player2units[1])
+            player2units.removeAt(1)
+            println(player2lane1)
+            println(player2lane2)
+        }
+        if (number == 3) {
+            player2lane2.add(player2units[2])
+            player2units.removeAt(2)
+            println(player2lane1)
+            println(player2lane2)
+        }
+        if (number == 4) {
+            player2lane2.add(player2units[3])
+            player2units.removeAt(3)
+            println(player2lane1)
+            println(player2lane2)
+        }
+        if (number == 5) {
+            player2lane2.add(player2units[4])
+            player2units.removeAt(4)
+            println(player2lane1)
+            println(player2lane2)
+        }
+        break
+    }
+    options2()
+    while (true) {
+        print("Choice for lane 2: ")
+        val input = readln()
+        if (input.isBlank()) continue
+        val number = input.toIntOrNull() ?: continue
+        if (number > player2units.size) {
+            continue
+        }
+        if (number == 0) {
+            continue
+        }
+        if (number <= 0) {
+            continue
+        }
+        if (number == 1) {
+            player2lane3.add(player2units[0])
+            player2units.removeAt(0)
+            println(player2lane1)
+            println(player2lane2)
+            println(player2lane3)
+        }
+        if (number == 2) {
+            player2lane3.add(player2units[1])
+            player2units.removeAt(1)
+            println(player2lane1)
+            println(player2lane2)
+            println(player2lane3)
+        }
+        if (number == 3) {
+            player2lane3.add(player2units[2])
+            player2units.removeAt(2)
+            println(player2lane1)
+            println(player2lane2)
+            println(player2lane3)
+        }
+        if (number == 4) {
+            player2lane3.add(player2units[3])
+            player2units.removeAt(3)
+            println(player2lane1)
+            println(player2lane2)
+            println(player2lane3)
+        }
+        if (number == 5) {
+            player2lane3.add(player2units[4])
+            player2units.removeAt(4)
+            println(player2lane1)
+            println(player2lane2)
+            println(player2lane3)
+        }
+        break
+    }
+    var victor = victorCheck()
+    if (victor == 0) {
+        round += 0
+        println("The round is a stalemate")
+    }
+    if (victor > 0) {
+        round += 1
+        println("$player1name wins the round")
+    }
+    if (victor < 0) {
+        round -= 1
+        println("$player2name wins the round")
     }
 }
+
+
+
+
+
+
 // The Function That tells you how to play the game
     fun tutorial() {
         println("Welcome To NATO Scissors Rock!")
@@ -360,20 +523,20 @@ fun startGame() {
         println("=====================================")
     }
 
-fun player1Turn(checkTurn: Boolean ): Boolean {
-    var checkTurn
-        if (player1lane1.size == 0)
-            checkTurn = true
-        if (player1lane2.size == 0)
-            checkTurn = true
-        if (player1lane3.size == 0)
-            checkTurn = true
-            return checkTurn
-        else {
-            checkTurn = false
-            return checkTurn
-        }
-}
+//fun player1Turn(checkTurn: Boolean ): Boolean {
+//    var checkTurn
+//        if (player1lane1.size == 0)
+//            checkTurn = true
+//        if (player1lane2.size == 0)
+//            checkTurn = true
+//        if (player1lane3.size == 0)
+//            checkTurn = true
+//            return checkTurn
+//        else {
+//            checkTurn = false
+//            return checkTurn
+//        }
+//}
 
 fun options1() {
         if (player1units.size >= 1) {
@@ -419,5 +582,277 @@ fun options2() {
             println(player2units[4])
         }
     }
-
+fun victorCheck(): Int {
+    var Check = 0
+    if (player1lane1.contains("Riflemen")) {
+        if (player2lane1.contains("Special Forces")){
+            Check -= 1
+            }
+        if (player2lane1.contains("Bunker")){
+            Check -= 1
+        }
+        if (player2lane1.contains("Artillery")){
+            Check -= 1
+        }
+        if (player2lane1.contains("Scouts")){
+            Check += 1
+        }
+        if (player2lane1.contains("Riflemen")){
+            Check -= 0
+        }
+    }
+    if (player1lane1.contains("Scouts")) {
+        if (player2lane1.contains("Special Forces")){
+            Check -= 1
+        }
+        if (player2lane1.contains("Bunker")){
+            Check -= 1
+        }
+        if (player2lane1.contains("Artillery")){
+            Check += 1
+        }
+        if (player2lane1.contains("Scouts")){
+            Check -= 0
+        }
+        if (player2lane1.contains("Riflemen")){
+            Check -= 1
+        }
+    }
+    if (player1lane1.contains("Artillery")) {
+        if (player2lane1.contains("Special Forces")) {
+            Check -= 1
+        }
+        if (player2lane1.contains("Bunker")) {
+            Check += 1
+        }
+        if (player2lane1.contains("Artillery")) {
+            Check -= 0
+        }
+        if (player2lane1.contains("Scouts")) {
+            Check -= 1
+        }
+        if (player2lane1.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    if (player1lane1.contains("Bunker")) {
+        if (player2lane1.contains("Special Forces")) {
+            Check -= 1
+        }
+        if (player2lane1.contains("Bunker")) {
+            Check -= 0
+        }
+        if (player2lane1.contains("Artillery")) {
+            Check -= 1
+        }
+        if (player2lane1.contains("Scouts")) {
+            Check += 1
+        }
+        if (player2lane1.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    if (player1lane1.contains("Special Forces")) {
+        if (player2lane1.contains("Special Forces")) {
+            Check -= 0
+        }
+        if (player2lane1.contains("Bunker")) {
+            Check += 1
+        }
+        if (player2lane1.contains("Artillery")) {
+            Check += 1
+        }
+        if (player2lane1.contains("Scouts")) {
+            Check += 1
+        }
+        if (player2lane1.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    //======================================================
+    // check lane 2
+    //======================================================
+    if (player1lane2.contains("Riflemen")) {
+        if (player2lane2.contains("Special Forces")){
+            Check -= 1
+        }
+        if (player2lane2.contains("Bunker")){
+            Check -= 1
+        }
+        if (player2lane2.contains("Artillery")){
+            Check -= 1
+        }
+        if (player2lane2.contains("Scouts")){
+            Check += 1
+        }
+        if (player2lane2.contains("Riflemen")){
+            Check -= 0
+        }
+    }
+    if (player1lane2.contains("Scouts")) {
+        if (player2lane2.contains("Special Forces")){
+            Check -= 1
+        }
+        if (player2lane2.contains("Bunker")){
+            Check -= 1
+        }
+        if (player2lane2.contains("Artillery")){
+            Check += 1
+        }
+        if (player2lane2.contains("Scouts")){
+            Check -= 0
+        }
+        if (player2lane2.contains("Riflemen")){
+            Check -= 1
+        }
+    }
+    if (player1lane2.contains("Artillery")) {
+        if (player2lane2.contains("Special Forces")) {
+            Check -= 1
+        }
+        if (player2lane2.contains("Bunker")) {
+            Check += 1
+        }
+        if (player2lane2.contains("Artillery")) {
+            Check -= 0
+        }
+        if (player2lane2.contains("Scouts")) {
+            Check -= 1
+        }
+        if (player2lane2.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    if (player1lane2.contains("Bunker")) {
+        if (player2lane2.contains("Special Forces")) {
+            Check -= 1
+        }
+        if (player2lane2.contains("Bunker")) {
+            Check -= 0
+        }
+        if (player2lane2.contains("Artillery")) {
+            Check -= 1
+        }
+        if (player2lane2.contains("Scouts")) {
+            Check += 1
+        }
+        if (player2lane2.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    if (player1lane2.contains("Special Forces")) {
+        if (player2lane2.contains("Special Forces")) {
+            Check -= 0
+        }
+        if (player2lane2.contains("Bunker")) {
+            Check += 1
+        }
+        if (player2lane2.contains("Artillery")) {
+            Check += 1
+        }
+        if (player2lane2.contains("Scouts")) {
+            Check += 1
+        }
+        if (player2lane2.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    //======================================================
+    // check lane 3
+    //======================================================
+    if (player1lane3.contains("Riflemen")) {
+        if (player2lane3.contains("Special Forces")){
+            Check -= 1
+        }
+        if (player2lane3.contains("Bunker")){
+            Check -= 1
+        }
+        if (player2lane3.contains("Artillery")){
+            Check -= 1
+        }
+        if (player2lane3.contains("Scouts")){
+            Check += 1
+        }
+        if (player2lane3.contains("Riflemen")){
+            Check -= 0
+        }
+    }
+    if (player1lane3.contains("Scouts")) {
+        if (player2lane3.contains("Special Forces")){
+            Check -= 1
+        }
+        if (player2lane3.contains("Bunker")){
+            Check -= 1
+        }
+        if (player2lane3.contains("Artillery")){
+            Check += 1
+        }
+        if (player2lane3.contains("Scouts")){
+            Check -= 0
+        }
+        if (player2lane3.contains("Riflemen")){
+            Check -= 1
+        }
+    }
+    if (player1lane3.contains("Artillery")) {
+        if (player2lane3.contains("Special Forces")) {
+            Check -= 1
+        }
+        if (player2lane3.contains("Bunker")) {
+            Check += 1
+        }
+        if (player2lane3.contains("Artillery")) {
+            Check -= 0
+        }
+        if (player2lane3.contains("Scouts")) {
+            Check -= 1
+        }
+        if (player2lane3.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    if (player1lane3.contains("Bunker")) {
+        if (player2lane3.contains("Special Forces")) {
+            Check -= 1
+        }
+        if (player2lane3.contains("Bunker")) {
+            Check -= 0
+        }
+        if (player2lane3.contains("Artillery")) {
+            Check -= 1
+        }
+        if (player2lane3.contains("Scouts")) {
+            Check += 1
+        }
+        if (player2lane3.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    if (player1lane3.contains("Special Forces")) {
+        if (player2lane3.contains("Special Forces")) {
+            Check -= 0
+        }
+        if (player2lane3.contains("Bunker")) {
+            Check += 1
+        }
+        if (player2lane3.contains("Artillery")) {
+            Check += 1
+        }
+        if (player2lane3.contains("Scouts")) {
+            Check += 1
+        }
+        if (player2lane3.contains("Riflemen")) {
+            Check += 1
+        }
+    }
+    val num = Check
+    return num
 }
+fun playersName(): String? {
+    println("====================")
+    println("What is your name?")
+    println("====================")
+    var name = readLine()
+    return name
+}
+
