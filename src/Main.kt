@@ -139,19 +139,31 @@ fun main() {
 // The Function that starts the game
     fun startGame() {
     var round = 3
-//        var player1name = "EMPTY"
-//        var player2name = "EMPTY"
+        var player1name = "EMPTY"
+        var player2name = "EMPTY"
     var firstround = true
+    while (round < 6 && round > 0) {
         player1units.add("Riflemen")
         player2units.add("Riflemen")
         player1units.add("Scouts")
         player2units.add("Scouts")
         player1units.add("Artillery")
         player2units.add("Artillery")
-        player1units.add("Special Forces")
-        player2units.add("Special Forces")
-
-        var player1name = playersName()
+        if (firstround == true) {
+            player1units.add("Special Forces")
+            player2units.add("Special Forces")
+        }
+        if (round == 1){
+            player1units.add("Bunker")
+            player1units.remove("Scouts")
+        }
+        if (round == 5){
+            player2units.add("Bunker")
+            player2units.remove("Scouts")
+        }
+        if (firstround == true) {
+            player1name = playersName().toString()
+        }
         options1()
         while (true) {
             print("Choice for lane 1: ")
@@ -293,161 +305,177 @@ fun main() {
             }
             break
         }
-        var player2name = playersName()
-
-    options2()
-    while (true) {
-        print("Choice for lane 1: ")
-        val input = readln()
-        if (input.isBlank()) continue
-        val number = input.toIntOrNull() ?: continue
-        if (number > player2units.size) {
-            continue
+        if (firstround == true) {
+            player2name = playersName().toString()
         }
-        if (number == 0) {
-            continue
+        options2()
+        while (true) {
+            print("Choice for lane 1: ")
+            val input = readln()
+            if (input.isBlank()) continue
+            val number = input.toIntOrNull() ?: continue
+            if (number > player2units.size) {
+                continue
+            }
+            if (number == 0) {
+                continue
+            }
+            if (number <= 0) {
+                continue
+            }
+            if (number == 1) {
+                player2lane1.add(player2units[0])
+                player2units.removeAt(0)
+                println(player2lane1)
+            }
+            if (number == 2) {
+                player2lane1.add(player2units[1])
+                player2units.removeAt(1)
+                println(player2lane1)
+            }
+            if (number == 3) {
+                player2lane1.add(player2units[2])
+                player2units.removeAt(2)
+                println(player2lane1)
+            }
+            if (number == 4) {
+                player2lane1.add(player2units[3])
+                player2units.removeAt(3)
+                println(player2lane1)
+            }
+            if (number == 5) {
+                player2lane1.add(player2units[4])
+                player2units.removeAt(4)
+                println(player2lane1)
+            }
+            break
         }
-        if (number <= 0) {
-            continue
+        options2()
+        while (true) {
+            print("Choice for lane 2: ")
+            val input = readln()
+            if (input.isBlank()) continue
+            val number = input.toIntOrNull() ?: continue
+            if (number > player2units.size) {
+                continue
+            }
+            if (number == 0) {
+                continue
+            }
+            if (number <= 0) {
+                continue
+            }
+            if (number == 1) {
+                player2lane2.add(player2units[0])
+                player2units.removeAt(0)
+                println(player2lane1)
+                println(player2lane2)
+            }
+            if (number == 2) {
+                player2lane2.add(player2units[1])
+                player2units.removeAt(1)
+                println(player2lane1)
+                println(player2lane2)
+            }
+            if (number == 3) {
+                player2lane2.add(player2units[2])
+                player2units.removeAt(2)
+                println(player2lane1)
+                println(player2lane2)
+            }
+            if (number == 4) {
+                player2lane2.add(player2units[3])
+                player2units.removeAt(3)
+                println(player2lane1)
+                println(player2lane2)
+            }
+            if (number == 5) {
+                player2lane2.add(player2units[4])
+                player2units.removeAt(4)
+                println(player2lane1)
+                println(player2lane2)
+            }
+            break
         }
-        if (number == 1) {
-            player2lane1.add(player2units[0])
-            player2units.removeAt(0)
-            println(player2lane1)
+        options2()
+        while (true) {
+            print("Choice for lane 2: ")
+            val input = readln()
+            if (input.isBlank()) continue
+            val number = input.toIntOrNull() ?: continue
+            if (number > player2units.size) {
+                continue
+            }
+            if (number == 0) {
+                continue
+            }
+            if (number <= 0) {
+                continue
+            }
+            if (number == 1) {
+                player2lane3.add(player2units[0])
+                player2units.removeAt(0)
+                println(player2lane1)
+                println(player2lane2)
+                println(player2lane3)
+            }
+            if (number == 2) {
+                player2lane3.add(player2units[1])
+                player2units.removeAt(1)
+                println(player2lane1)
+                println(player2lane2)
+                println(player2lane3)
+            }
+            if (number == 3) {
+                player2lane3.add(player2units[2])
+                player2units.removeAt(2)
+                println(player2lane1)
+                println(player2lane2)
+                println(player2lane3)
+            }
+            if (number == 4) {
+                player2lane3.add(player2units[3])
+                player2units.removeAt(3)
+                println(player2lane1)
+                println(player2lane2)
+                println(player2lane3)
+            }
+            if (number == 5) {
+                player2lane3.add(player2units[4])
+                player2units.removeAt(4)
+                println(player2lane1)
+                println(player2lane2)
+                println(player2lane3)
+            }
+            break
         }
-        if (number == 2) {
-            player2lane1.add(player2units[1])
-            player2units.removeAt(1)
-            println(player2lane1)
+        var victor = victorCheck()
+        if (victor == 0) {
+            round += 0
+            println("The round is a stalemate")
         }
-        if (number == 3) {
-            player2lane1.add(player2units[2])
-            player2units.removeAt(2)
-            println(player2lane1)
+        if (victor > 0) {
+            round += 1
+            println("$player1name wins the round")
         }
-        if (number == 4) {
-            player2lane1.add(player2units[3])
-            player2units.removeAt(3)
-            println(player2lane1)
+        if (victor < 0) {
+            round -= 1
+            println("$player2name wins the round")
         }
-        if (number == 5) {
-            player2lane1.add(player2units[4])
-            player2units.removeAt(4)
-            println(player2lane1)
-        }
-        break
+        firstround = false
+        player1lane1.clear()
+        player1lane2.clear()
+        player1lane3.clear()
+        player2lane1.clear()
+        player2lane2.clear()
+        player2lane3.clear()
+        continue
     }
-    options2()
-    while (true) {
-        print("Choice for lane 2: ")
-        val input = readln()
-        if (input.isBlank()) continue
-        val number = input.toIntOrNull() ?: continue
-        if (number > player2units.size) {
-            continue
-        }
-        if (number == 0) {
-            continue
-        }
-        if (number <= 0) {
-            continue
-        }
-        if (number == 1) {
-            player2lane2.add(player2units[0])
-            player2units.removeAt(0)
-            println(player2lane1)
-            println(player2lane2)
-        }
-        if (number == 2) {
-            player2lane2.add(player2units[1])
-            player2units.removeAt(1)
-            println(player2lane1)
-            println(player2lane2)
-        }
-        if (number == 3) {
-            player2lane2.add(player2units[2])
-            player2units.removeAt(2)
-            println(player2lane1)
-            println(player2lane2)
-        }
-        if (number == 4) {
-            player2lane2.add(player2units[3])
-            player2units.removeAt(3)
-            println(player2lane1)
-            println(player2lane2)
-        }
-        if (number == 5) {
-            player2lane2.add(player2units[4])
-            player2units.removeAt(4)
-            println(player2lane1)
-            println(player2lane2)
-        }
-        break
+    if (round == 6){
+        println("$player1name wins the game!")
     }
-    options2()
-    while (true) {
-        print("Choice for lane 2: ")
-        val input = readln()
-        if (input.isBlank()) continue
-        val number = input.toIntOrNull() ?: continue
-        if (number > player2units.size) {
-            continue
-        }
-        if (number == 0) {
-            continue
-        }
-        if (number <= 0) {
-            continue
-        }
-        if (number == 1) {
-            player2lane3.add(player2units[0])
-            player2units.removeAt(0)
-            println(player2lane1)
-            println(player2lane2)
-            println(player2lane3)
-        }
-        if (number == 2) {
-            player2lane3.add(player2units[1])
-            player2units.removeAt(1)
-            println(player2lane1)
-            println(player2lane2)
-            println(player2lane3)
-        }
-        if (number == 3) {
-            player2lane3.add(player2units[2])
-            player2units.removeAt(2)
-            println(player2lane1)
-            println(player2lane2)
-            println(player2lane3)
-        }
-        if (number == 4) {
-            player2lane3.add(player2units[3])
-            player2units.removeAt(3)
-            println(player2lane1)
-            println(player2lane2)
-            println(player2lane3)
-        }
-        if (number == 5) {
-            player2lane3.add(player2units[4])
-            player2units.removeAt(4)
-            println(player2lane1)
-            println(player2lane2)
-            println(player2lane3)
-        }
-        break
-    }
-    var victor = victorCheck()
-    if (victor == 0) {
-        round += 0
-        println("The round is a stalemate")
-    }
-    if (victor > 0) {
-        round += 1
-        println("$player1name wins the round")
-    }
-    if (victor < 0) {
-        round -= 1
-        println("$player2name wins the round")
+    if (round == 0){
+        println("$player2name wins the game!")
     }
 }
 
