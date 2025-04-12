@@ -2,7 +2,7 @@
  * =====================================================================
  * Programming Project for NCEA Level 2, Standard 91896
  * ---------------------------------------------------------------------
- * Project Name:   PROJECT NAME HERE
+ * Project Name:   NATO Scissors Rock!
  * Project Author: LeBron Grout Rongotaua
  * GitHub Repo:    https://github.com/waimea-legroutrongotaua/level-two-programming-assessment
  * ---------------------------------------------------------------------
@@ -86,20 +86,31 @@
 // , main menu (taking the user back to the first screen) or quit (closing the game)
 //------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------
-// where all the functions are used
+// where all the global list are used
+//the players currentlly avaliable units lists
+//player 1's units
 val player1units = mutableListOf<String>()
+//player 2's units
 val player2units = mutableListOf<String>()
+//the players unit choices for lanes lists
+//player 1's lane unit choices
 val player1lane1 = mutableListOf<String>()
 val player1lane2 = mutableListOf<String>()
 val player1lane3 = mutableListOf<String>()
+//player 2's lane unit choices
 val player2lane1 = mutableListOf<String>()
 val player2lane2 = mutableListOf<String>()
 val player2lane3 = mutableListOf<String>()
+//the first function which enacts the choices of the user from the menu function (line 115)
 fun main() {
+    //the users action being related to the corresponding function
     val action = menu()
     when (action) {
+        //startGame is the function where the game is run
         'a' -> startGame()
+        //tutorial is the function which explains to the user how to play the game
         's' -> tutorial()
+        //endgame closes the game
         'd' -> endGame()
 
     }
@@ -131,14 +142,10 @@ fun main() {
 
         }
     }
-//    a == "" && b == "" ->
-//fun(choice: ) : Boolean {}
-//    return when {
-//
-//    }
 // The Function that starts the game
     fun startGame() {
     var round = 3
+    var roundName = "EMPTY"
         var player1name = "EMPTY"
         var player2name = "EMPTY"
     var firstround = true
@@ -305,6 +312,20 @@ fun main() {
             }
             break
         }
+        println("====================")
+        println("NEXT PLAYERS TURN")
+        println("////////////////////")
+        println("||||||||||||||||||||")
+        println("////////////////////")
+        println("||||||||||||||||||||")
+        println("////////////////////")
+        println("||||||||||||||||||||")
+        println("////////////////////")
+        println("||||||||||||||||||||")
+        println("////////////////////")
+        println("||||||||||||||||||||")
+        println("NEXT PLAYERS TURN")
+        println("====================")
         if (firstround == true) {
             player2name = playersName().toString()
         }
@@ -452,16 +473,50 @@ fun main() {
         var victor = victorCheck()
         if (victor == 0) {
             round += 0
+            println("====================")
             println("The round is a stalemate")
+            println("====================")
         }
         if (victor > 0) {
             round += 1
+            println("====================")
             println("$player1name wins the round")
+            println("====================")
         }
         if (victor < 0) {
             round -= 1
+            println("====================")
             println("$player2name wins the round")
+            println("====================")
         }
+        if (round == 1){
+            roundName = "Last Stand"
+        }
+        if (round == 2){
+            roundName = "Fall Back"
+        }
+        if (round == 3){
+            roundName = "Battle"
+        }
+        if (round == 4){
+            roundName = "Fall Back"
+        }
+        if (round == 5){
+            roundName = "Last Stand"
+        }
+        println("NEXT ROUND")
+        if (round <= 2) {
+            println("$player1name's $roundName")
+        }
+        if (round >= 4) {
+            println("$player2name's $roundName")
+        }
+        if (round == 3) {
+            println(roundName)
+        }
+        println("====================")
+        println("Press Enter to Continue")
+        val continue3 = readln()
         firstround = false
         player1lane1.clear()
         player1lane2.clear()
@@ -478,137 +533,61 @@ fun main() {
         println("$player2name wins the game!")
     }
 }
-
-
-
-
-
-
-// The Function That tells you how to play the game
-    fun tutorial() {
-        println("Welcome To NATO Scissors Rock!")
-        println("This game is a 2 player 5 round")
-        println("Rock paper scissors like game")
-        println("but you have 3 lanes and")
-        println("5 possible units to play")
-        println("These units are...")
-        println("====================")
-        println("PRESS ENTER TO CONTINUE")
-        println("====================")
-        var Continue = readln()
-        println("Riflemen:")
-        println("Riflemen when played in the same lane will as scouts will win")
-        println("==========")
-        println("   ||||   ")
-        println("   ||||   ")
-        println("==========")
-        println("Scouts:")
-        println("Scouts when played in the same lane as Artillery will win")
-        println("==========")
-        println("   ////   ")
-        println("   ////   ")
-        println("==========")
-        println("Artillery:")
-        println("Riflemen when played in the same lane as Riflemen will win")
-        println("==========")
-        println("   ||||    ")
-        println("   ////   ")
-        println("==========")
-        println("there are also two special units...")
-        println("====================")
-        println("PRESS ENTER TO CONTINUE")
-        println("====================")
-        var Continue2 = readln()
-        println("Fortress:")
-        println("Fortress when played in the same lane as Riflemen or Scouts will win but only appears in a players last stand round")
-        println("==========")
-        println("   |==|   ")
-        println("   ||||   ")
-        println("==========")
-        println("Special Forces:")
-        println("Special Forces when played in the same lane as Any unit will win but each side only gets one per game")
-        println("==========")
-        println("   SPEC   ")
-        println("   ////   ")
-        println("==========")
-        println("====================")
-        println("PRESS ENTER TO CONTINUE")
-        println("====================")
-        println("Lanes:")
-        println("Each player will take turns putting 1 unit in each of the 3 lanes")
-        println("       ==========     ==========      ==========")
-        println("       |       1|     |       2|      |       3|")
-        println("       |1       |     |2       |      |3       |")
-        println("       ==========     ==========      ==========")
-
-    }
-
-// The Function that ends the game
-    fun endGame() {
-        //Thank the player for playing
-        println("=====================================")
-        println("          Thanks for playing         ")
-        println("=====================================")
-    }
-
-//fun player1Turn(checkTurn: Boolean ): Boolean {
-//    var checkTurn
-//        if (player1lane1.size == 0)
-//            checkTurn = true
-//        if (player1lane2.size == 0)
-//            checkTurn = true
-//        if (player1lane3.size == 0)
-//            checkTurn = true
-//            return checkTurn
-//        else {
-//            checkTurn = false
-//            return checkTurn
-//        }
-//}
-
 fun options1() {
         if (player1units.size >= 1) {
+            println("====================")
             println("PRESS 1")
             println(player1units[0])
         }
         if (player1units.size >= 2) {
+            println("====================")
             println("PRESS 2")
             println(player1units[1])
         }
         if (player1units.size >= 3) {
+            println("====================")
             println("PRESS 3")
             println(player1units[2])
         }
         if (player1units.size >= 4) {
+            println("====================")
             println("PRESS 4")
             println(player1units[3])
         }
         if (player1units.size >= 5) {
+            println("====================")
             println("PRESS 5")
             println(player1units[4])
         }
+    println("====================")
 }
 fun options2() {
         if (player2units.size >= 1) {
+            println("====================")
             println("PRESS 1")
             println(player2units[0])
         }
         if (player2units.size >= 2) {
+            println("====================")
             println("PRESS 2")
             println(player2units[1])
         }
         if (player2units.size >= 3) {
+            println("====================")
             println("PRESS 3")
             println(player2units[2])
         }
         if (player2units.size >= 4) {
+            println("====================")
             println("PRESS 4")
             println(player2units[3])
         }
         if (player2units.size >= 5) {
+            println("====================")
             println("PRESS 5")
             println(player2units[4])
         }
+    println("====================")
     }
 fun victorCheck(): Int {
     var Check = 0
@@ -880,7 +859,71 @@ fun playersName(): String? {
     println("====================")
     println("What is your name?")
     println("====================")
-    var name = readLine()
+    val name = readLine()
     return name
 }
+// The Function That tells you how to play the game
+fun tutorial() {
+    println("Welcome To NATO Scissors Rock!")
+    println("This game is a 2 player 5 round")
+    println("Rock paper scissors like game")
+    println("but you have 3 lanes and")
+    println("5 possible units to play")
+    println("These units are...")
+    println("====================")
+    println("PRESS ENTER TO CONTINUE")
+    println("====================")
+    val Continue = readln()
+    println("Riflemen:")
+    println("Riflemen when played in the same lane will as scouts will win")
+    println("==========")
+    println("   ||||   ")
+    println("   ||||   ")
+    println("==========")
+    println("Scouts:")
+    println("Scouts when played in the same lane as Artillery will win")
+    println("==========")
+    println("   ////   ")
+    println("   ////   ")
+    println("==========")
+    println("Artillery:")
+    println("Riflemen when played in the same lane as Riflemen will win")
+    println("==========")
+    println("   ||||    ")
+    println("   ////   ")
+    println("==========")
+    println("there are also two special units...")
+    println("====================")
+    println("PRESS ENTER TO CONTINUE")
+    println("====================")
+    val Continue2 = readln()
+    println("Fortress:")
+    println("Fortress when played in the same lane as Riflemen or Scouts will win but only appears in a players last stand round")
+    println("==========")
+    println("   |==|   ")
+    println("   ||||   ")
+    println("==========")
+    println("Special Forces:")
+    println("Special Forces when played in the same lane as Any unit will win but each side only gets one per game")
+    println("==========")
+    println("   SPEC   ")
+    println("   ////   ")
+    println("==========")
+    println("====================")
+    println("PRESS ENTER TO CONTINUE")
+    println("====================")
+    println("Lanes:")
+    println("Each player will take turns putting 1 unit in each of the 3 lanes")
+    println("       ==========     ==========      ==========")
+    println("       |       1|     |       2|      |       3|")
+    println("       |1       |     |2       |      |3       |")
+    println("       ==========     ==========      ==========")
 
+}
+// The Function that ends the game
+fun endGame() {
+    //Thank the player for playing
+    println("=====================================")
+    println("          Thanks for playing         ")
+    println("=====================================")
+}

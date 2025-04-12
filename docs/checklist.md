@@ -9,14 +9,14 @@ This checklist can be used to gauge progress towards different levels of success
 ### Program Functionality
 
 The game functions correctly and meets the specification:
-- [ ] The game is **playable**
+- [x] The game is **playable**
 - [x] The **instructions** for the game are available in-game
-- [ ] **Two players** can play
-- [ ] Player **names** are used to identify each player
-- [ ] Players **take turns** to play
+- [x] **Two players** can play
+- [x] Player **names** are used to identify each player
+- [x] Players **take turns** to play
 - [x] Players provides **input data** to the game (e.g. moves to make)
 - [ ] The **current status** of the game is shown after each play
-- [ ] A **winner is detected** correctly
+- [x] A **winner is detected** correctly
 
 ### Program Code
 
@@ -29,14 +29,14 @@ The program structure:
 - [x] Contains **sequences** of instructions
 - [x] Uses **conditional** instructions to control the program flow
 - [x] Uses program **branches** (if...else, when, etc.)
-- [ ] Uses **iteration** (loops) to repeat things (for, while, etc.)
+- [x] Uses **iteration** (loops) to repeat things (for, while, etc.)
 
 ### Program Documentation
 
 The program code:
 - [ ] Is **indented** correctly
 - [ ] Is **laid-out clearly**
-- [x] Contains **comments** that help in understanding how it works
+- [ ] Contains **comments** that help in understanding how it works
 
 ### Program Testing
 
@@ -62,11 +62,11 @@ The program stores data using variables, where:
 - [ ] Variable names **begin with lowercase**
 - [ ] Naming is consistent, either **camelCase or snake_case**
 - [ ] Variables are **scoped appropriately** (global or local to a function)
-- [ ] **Global** variables are only used if **genuinely needed**
+- [x] **Global** variables are only used if **genuinely needed**
 
 The program uses functions appropriately, where:
-- [ ] At least one uses **parameters** to pass data into it
-- [ ] At least one provides a **return value** to the calling code
+- [x] At least one uses **parameters** to pass data into it
+- [x] At least one provides a **return value** to the calling code
 - [ ] The function **names are well-chosen**, relating to their functionality 
 
 ### Program Documentation
