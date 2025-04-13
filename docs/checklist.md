@@ -41,12 +41,12 @@ The program code:
 ### Program Testing
 
 The program has been tested and there is documented evidence that:
-- [ ] The game is **fully functional**, showing testing of:
-  - [ ] game setup
-  - [ ] player moves
-  - [ ] players taking turns
-  - [ ] scoring (if any)
-  - [ ] players winning
+- [x] The game is **fully functional**, showing testing of:
+  - [x] game setup
+  - [x] player moves
+  - [x] players taking turns
+  - [x] scoring (if any)
+  - [x] players winning
   - [ ] final feedback (if appropriate)
 - [ ] **Valid (expected) data** has been used to test **all data inputs**
 - [ ] Where tests have failed, **fixes** are discussed and **tests re-run**
@@ -82,8 +82,8 @@ The program code is well-commented:
 
 The program has been tested using:
 - [x] A test plan **prepared in advance** of the coding
-- [ ] A test plan that **defines test data values** to be used
-- [ ] Test values that cover **boundary** (limit / edge) cases
+- [x] A test plan that **defines test data values** to be used
+- [x] Test values that cover **boundary** (limit / edge) cases
 
 ---
 
