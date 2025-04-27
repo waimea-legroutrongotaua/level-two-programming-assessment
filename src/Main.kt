@@ -343,7 +343,7 @@ fun main() {
             player2Name = playersName().toString()
         }
         laneNumber = 1
-        // player 1's choices for their lanes units are chosen within this while loop.
+        // player 2's choices for their lanes units are chosen within this while loop.
         while (true) {
             options2()
             print("Choice for lane $laneNumber: ")
@@ -352,6 +352,7 @@ fun main() {
             val number = input.toIntOrNull() ?: continue
             if (number > player2Units.size) {
                 continue
+
             }
             if (number == 0) {
                 continue
