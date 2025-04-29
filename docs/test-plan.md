@@ -30,7 +30,7 @@ I want to test the units and that they beat the opposing units they are meant to
 
 I will run the game multiple times with different battles with units against other units
 ### Expected Test Result
-I hope to see that the units are consistently winning and losing when they should and they can only be placed once in each round
+I hope to see that the units are consistently winning and losing when they should, and they can only be placed once in each round
 
 ---
 
@@ -48,3 +48,14 @@ I hope to see that the menu can handle invalid inputs and gives the player the o
 
 ---
 
+
+## Test that players can win the game
+
+I want to test that the game allows you to win when you are meant to
+### Testing what happens when the win conditions are meet
+
+I will go through the game setting up a win for a player then seeing what results from it
+
+### Expected Test Result
+
+I hope to see that when a player has met their win condition (winning on the players last stand round) that the game registers that they won

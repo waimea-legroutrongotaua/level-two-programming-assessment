@@ -915,9 +915,9 @@ fun tutorial() {
     println("   ////   ")
     println("==========")
     println("Artillery:")
-    println("Riflemen when played in the same lane as Riflemen will win")
+    println("Artillery when played in the same lane as Riflemen will win")
     println("==========")
-    println("   ||||    ")
+    println("   ||||   ")
     println("   ////   ")
     println("==========")
     println("there are also two special units...")
@@ -948,7 +948,6 @@ fun tutorial() {
     println("       ==========     ==========      ==========")
 
 }
-
 /**
  * The Function that ends the game and is used if the user picks option d ( (D) quit ) at the menu.
  */
@@ -958,3 +957,4 @@ fun endGame() {
     println("          Thanks for playing         ")
     println("=====================================")
 }
+//End of code
