@@ -28,27 +28,11 @@ I hope to see the unit in the lane kept as what is picked by the player
 I want to test the units and that they beat the opposing units they are meant to lose to and win against the opposing units they are supposed to
 ### Test Data To Use
 
-I will run the game multiple times with different battles with units against other units
+I will run the game testing if units against other units ends with the expected outcome
 ### Expected Test Result
 I hope to see that the units are consistently winning and losing when they should, and they can only be placed once in each round
 
 ---
-
-
-## Test that the menu works as expected
-
-I want to test that the main menu allows you to pick to start the game learn how to play and quit
-### Testing the main menu options
-
-I will go through the menu testing the input and invalid inputs as well to make sure it can handle it
-
-### Expected Test Result
-
-I hope to see that the menu can handle invalid inputs and gives the player the option to correct their mistake and doesn't crash when faced with invalid inputs
-
----
-
-
 ## Test that players can win the game
 
 I want to test that the game allows you to win when you are meant to
