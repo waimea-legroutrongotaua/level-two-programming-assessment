@@ -498,23 +498,33 @@ fun main() {
         if (round == 5){
             roundName = "Last Stand"
         }
-        println("NEXT ROUND")
-        if (round <= 2) {
-            println("$player1Name's $roundName")
+        if (round in 1..5) {
+            println("NEXT ROUND")
         }
-        if (round >= 4) {
-            println("$player2Name's $roundName")
-        }
-        if (round == 3) {
-            println(roundName)
+        if (round in 1..5) {
+            if (round <= 2) {
+                println("$player1Name's $roundName")
+            }
+            if (round >= 4) {
+                println("$player2Name's $roundName")
+            }
+            if (round == 3) {
+                println(roundName)
+            }
         }
         println("====================")
         println("Press Enter to Continue")
         val continue3 = readln()
-        //the list of the players' lane choices are cleared for ext round
+        //the list of the players' lane choices are cleared for next round
         //and if it is the end of the first round the firstRound variable is set to false as
         //it would no longer be the first round
         firstRound = false
+        if (!player1Units.contains("Special Forces")) {
+                player1Units.clear()
+            }
+        if (!player2Units.contains("Special Forces")) {
+            player2Units.clear()
+        }
         player1Lane1.clear()
         player1Lane2.clear()
         player1Lane3.clear()
