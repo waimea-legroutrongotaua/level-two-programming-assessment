@@ -1,4 +1,4 @@
-# PROJECT NAME HERE
+# NATO Scissors Rock
 
 by LeBron
 
@@ -26,7 +26,7 @@ The project is written in the [Kotlin](https://kotlinlang.org) programming langu
 
 ## Project Description
 
-**PLACE YOUR PROJECT DESCRIPTION HERE**
+The game is called NATO scissors rock and is a twist on the classic rock paper scissors
 
 
 

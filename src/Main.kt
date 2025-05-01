@@ -7,7 +7,7 @@
  * GitHub Repo:    https://github.com/waimea-legroutrongotaua/level-two-programming-assessment
  * ---------------------------------------------------------------------
  * Notes:
- * PROJECT NOTES HERE
+ * NATO Scissors Rock is a twist on the classic Paper Scissors Rock
  * =====================================================================
  */
 /**
@@ -90,7 +90,7 @@
 //------------------------------------------------------------------------------------------------------------------------
 */
 // where all the global list are used
-//the players currentlly avaliable units lists
+//the players currently available units lists
 //player 1's units
 val player1Units = mutableListOf<String>()
 //player 2's units
@@ -201,6 +201,7 @@ fun main() {
             if (number <= 0) {
                 continue
             }
+            //checks if lane 1 and lane 2 are full and that lane 3 is empty in which case it will run
             if (player1Lane1.size == 1 && player1Lane2.size == 1 && player1Lane3.size == 0) {
                 if (number == 1) {
                     player1Lane3.add(player1Units[0])
@@ -238,6 +239,7 @@ fun main() {
                     println(player1Lane3)
                 }
             }
+            //checks if lane 1 is full and if lane 2 is empty in which case it will run
             if (player1Lane1.size == 1 && player1Lane2.size == 0) {
                 if (number == 1) {
                     player1Lane2.add(player1Units[0])
@@ -270,6 +272,7 @@ fun main() {
                     println(player1Lane2)
                 }
             }
+            //checks if lane 1 is empty in which case it will run
             if (player1Lane1.size == 0) {
                 if (number == 1) {
                     player1Lane1.add(player1Units[0])
@@ -360,6 +363,7 @@ fun main() {
             if (number <= 0) {
                 continue
             }
+            //checks if lane 1 and lane 2 are full and that lane 3 is empty in which case it will run
             if (player2Lane1.size == 1 && player2Lane2.size == 1 && player2Lane3.size == 0) {
                 if (number == 1) {
                     player2Lane3.add(player2Units[0])
@@ -397,6 +401,7 @@ fun main() {
                     println(player2Lane3)
                 }
             }
+            //checks if lane 1 is full and if lane 2 is empty in which case it will run
             if (player2Lane1.size == 1 && player2Lane2.size == 0) {
                 if (number == 1) {
                     player2Lane2.add(player2Units[0])
@@ -429,6 +434,7 @@ fun main() {
                     println(player2Lane2)
                 }
             }
+            //checks if lane 1 is empty in which case it will run
             if (player2Lane1.size == 0) {
                 if (number == 1) {
                     player2Lane1.add(player2Units[0])
@@ -514,6 +520,7 @@ fun main() {
         }
         println("====================")
         println("Press Enter to Continue")
+        //this val is to break up the information for the user
         val continue3 = readln()
         //the list of the players' lane choices are cleared for next round
         //and if it is the end of the first round the firstRound variable is set to false as
@@ -911,7 +918,7 @@ fun tutorial() {
     println("====================")
     println("PRESS ENTER TO CONTINUE")
     println("====================")
-    val Continue = readln()
+    val Continue = readln() //this val is to break up the information for the user thus the underline
     println("Riflemen:")
     println("Riflemen when played in the same lane will as scouts will win")
     println("==========")
@@ -934,7 +941,7 @@ fun tutorial() {
     println("====================")
     println("PRESS ENTER TO CONTINUE")
     println("====================")
-    val Continue2 = readln()
+    val Continue2 = readln() //this val is to break up the information for the user thus the underline
     println("Fortress:")
     println("Fortress when played in the same lane as Riflemen or Scouts will win but only appears in a players last stand round")
     println("==========")
